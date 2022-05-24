@@ -25,9 +25,11 @@ pub fn build(b: *Builder) void {
     const m: std.Target.riscv.Feature = .m;
     const a: std.Target.riscv.Feature = .a;
     const c: std.Target.riscv.Feature = .c;
+    const f: std.Target.riscv.Feature = .f;
     fe310_cpu_feat.addFeature(@enumToInt(a));
     fe310_cpu_feat.addFeature(@enumToInt(m));
     fe310_cpu_feat.addFeature(@enumToInt(c));
+    fe310_cpu_feat.addFeature(@enumToInt(f));
 
     const target = Zig.CrossTarget{
         .cpu_arch = Target.Cpu.Arch.riscv32,
